@@ -47,6 +47,7 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(784, 422);
             this.panel.TabIndex = 0;
+            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Game_Paint);
             // 
             // powerLabel
             // 
@@ -67,9 +68,6 @@
             // 
             // fireButton
             // 
-            this.fireButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.fireButton.Enabled = false;
             this.fireButton.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.fireButton.Location = new System.Drawing.Point(204, 9);
@@ -81,8 +79,6 @@
             // 
             // shotLabel
             // 
-            this.shotLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.shotLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.shotLabel.Location = new System.Drawing.Point(480, 9);
             this.shotLabel.Name = "shotLabel";
@@ -92,8 +88,6 @@
             // 
             // shotCount
             // 
-            this.shotCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.shotCount.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.shotCount.Location = new System.Drawing.Point(542, 9);
             this.shotCount.Name = "shotCount";
@@ -103,8 +97,6 @@
             // 
             // hitLabel
             // 
-            this.hitLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.hitLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.hitLabel.Location = new System.Drawing.Point(604, 9);
             this.hitLabel.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
@@ -115,8 +107,6 @@
             // 
             // hitCount
             // 
-            this.hitCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.hitCount.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.hitCount.Location = new System.Drawing.Point(666, 9);
             this.hitCount.Name = "hitCount";
@@ -143,6 +133,7 @@
             this.Name = "Game";
             this.ShowIcon = false;
             this.Text = "Horizontalni hitac";
+            this.Load += new System.EventHandler(this.Game_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

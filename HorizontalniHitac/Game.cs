@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HorizontalniHitac.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace HorizontalniHitac
         public Game()
         {
             InitializeComponent();
+        }
+        Ball ball;
+        Target target;
+
+        private void Game_Load(object sender, EventArgs e)
+        {
+            ball = new Ball();
+            target = new Target(panel.ClientRectangle.Width, panel.ClientRectangle.Height);
+        }
+
+        private void Game_Paint(object sender, PaintEventArgs e)
+        {
+            ball.Draw(e.Graphics);
+            target.Draw(e.Graphics);
         }
     }
 }
