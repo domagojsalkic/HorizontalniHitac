@@ -79,6 +79,7 @@
             this.fireButton.TabIndex = 3;
             this.fireButton.Text = "FIRE!";
             this.fireButton.UseVisualStyleBackColor = true;
+            this.fireButton.Click += new System.EventHandler(this.fireButton_Click);
             // 
             // shotLabel
             // 
@@ -117,6 +118,10 @@
             this.hitCount.TabIndex = 7;
             this.hitCount.Text = "0";
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -130,6 +135,7 @@
             this.Controls.Add(this.powerTextBox);
             this.Controls.Add(this.powerLabel);
             this.Controls.Add(this.panel);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(800, 500);

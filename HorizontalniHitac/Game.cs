@@ -16,6 +16,8 @@ namespace HorizontalniHitac
         public Game()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
+            UpdateStyles();
         }
         Ball ball;
         Target target;
@@ -29,6 +31,7 @@ namespace HorizontalniHitac
 
         private void Game_Paint(object sender, PaintEventArgs e)
         {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             ball.Draw(e.Graphics);
             target.Draw(e.Graphics);
         }
@@ -44,6 +47,22 @@ namespace HorizontalniHitac
                 fireButton.Enabled = false;
                 powerTextBox.Clear();
             }
+        }
+
+        private void fireButton_Click(object sender, EventArgs e)
+        {
+            timer.Enabled = true;
+        }
+
+        float vX, vY, gravity = 0.981f;
+        int seconds = 0;
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            ++seconds;
+            vX = (float)velocity/10;
+            vY = gravity * seconds;
+            ball.Move(vX, vY);
+            this.Refresh();
         }
     }
 }
