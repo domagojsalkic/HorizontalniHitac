@@ -19,6 +19,7 @@ namespace HorizontalniHitac
         }
         Ball ball;
         Target target;
+        double velocity;
 
         private void Game_Load(object sender, EventArgs e)
         {
@@ -30,6 +31,19 @@ namespace HorizontalniHitac
         {
             ball.Draw(e.Graphics);
             target.Draw(e.Graphics);
+        }
+
+        private void powerTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if(double.TryParse(powerTextBox.Text,out velocity))
+            {
+                fireButton.Enabled = true;
+            }
+            else
+            {
+                fireButton.Enabled = false;
+                powerTextBox.Clear();
+            }
         }
     }
 }

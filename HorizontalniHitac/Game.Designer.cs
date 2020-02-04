@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel = new System.Windows.Forms.Panel();
             this.powerLabel = new System.Windows.Forms.Label();
             this.powerTextBox = new System.Windows.Forms.TextBox();
@@ -36,6 +37,7 @@
             this.shotCount = new System.Windows.Forms.Label();
             this.hitLabel = new System.Windows.Forms.Label();
             this.hitCount = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // panel
@@ -43,9 +45,9 @@
             this.panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel.Location = new System.Drawing.Point(0, 39);
+            this.panel.Location = new System.Drawing.Point(0, 38);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(784, 422);
+            this.panel.Size = new System.Drawing.Size(784, 423);
             this.panel.TabIndex = 0;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Game_Paint);
             // 
@@ -65,6 +67,7 @@
             this.powerTextBox.Name = "powerTextBox";
             this.powerTextBox.Size = new System.Drawing.Size(110, 22);
             this.powerTextBox.TabIndex = 2;
+            this.powerTextBox.TextChanged += new System.EventHandler(this.powerTextBox_TextChanged);
             // 
             // fireButton
             // 
@@ -149,6 +152,7 @@
         private System.Windows.Forms.Label shotCount;
         private System.Windows.Forms.Label hitLabel;
         private System.Windows.Forms.Label hitCount;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
