@@ -97,7 +97,6 @@
             this.shotCount.Name = "shotCount";
             this.shotCount.Size = new System.Drawing.Size(39, 19);
             this.shotCount.TabIndex = 5;
-            this.shotCount.Text = "0";
             // 
             // hitLabel
             // 
@@ -116,10 +115,10 @@
             this.hitCount.Name = "hitCount";
             this.hitCount.Size = new System.Drawing.Size(35, 19);
             this.hitCount.TabIndex = 7;
-            this.hitCount.Text = "0";
             // 
             // timer
             // 
+            this.timer.Interval = 50;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // Game
