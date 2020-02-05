@@ -10,20 +10,23 @@ namespace HorizontalniHitac.Objects
     {
         public float X { get; set; }
         public float Y { get; set; }
-        public float Radius { get; set; }
+        public float Width { get; set; }
+        public float Height { get; set; }
 
         public Target() { }
         public Target(int x, int y)
         {
-            Radius = 60;
+            Width = 120;
+            Height = 10;
             Random rand = new Random();
-            X = rand.Next(x / 3, x - (int)Radius*2);
-            Y = y - (int) Radius;
+            X = rand.Next(x / 3, x - (int)Width);
+            Y = y - (int)Height*2;
         }
 
         public void Draw(System.Drawing.Graphics g)
         {
-            g.DrawEllipse(new System.Drawing.Pen(System.Drawing.Color.Black, 4), X, Y, Radius * 2, Radius / 2);
+            g.DrawRectangle(new System.Drawing.Pen(System.Drawing.Color.Black, 1), X, Y, Width, Height);
+            g.FillRectangle(new System.Drawing.SolidBrush(System.Drawing.Color.Black), X, Y, Width, Height);
         }
     }
 }
