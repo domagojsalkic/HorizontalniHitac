@@ -13,7 +13,6 @@ namespace HorizontalniHitac
 {
     public partial class Game : Form
     {
-        enum Check { HIT, MISS };
 
         public Game()
         {
